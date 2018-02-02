@@ -7,7 +7,6 @@ public class JsonResult {
     private int code;//状态吗
     private String msg;//描述信息
     private Object data;//返回数据
-
     public int getCode() {
         return code;
     }
