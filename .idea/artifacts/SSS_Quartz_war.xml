@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SSS_Quartz:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SSS_Quartz-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SSS_Quartz:war exploded" />
+    </root>
+  </artifact>
+</component>

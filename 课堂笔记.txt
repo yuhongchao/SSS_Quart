@@ -1,0 +1,117 @@
+今日内容：
+SpringMVC+Spring+Spring DataJPA+Spring Data Redis+Quartz
+Spring Data Jpa:
+持久层的开源框架
+JPA:java持久化api技术，主要实现对数据库的操作
+Hibernate JPA
+
+Spring Data JPA和Hibernate和MyBatis都是一样的
+JPA的注解:
+        @Entity
+        @Table
+        @Cache
+        @Id
+        @GeneratedValue
+        @Column
+        @OneToOne
+        @ManyToOne
+        @OneToMany
+        @ManyToMany
+        @JoinColumn---外键
+        @JoinTable-----多对多
+
+Spring Data JPA：
+1、接口
+2、JPQL语句
+3、SQL语句
+4、方法名查询
+5、动态查询-----Hibernate的QBC查询
+
+
+使用SpringData JPA就是替换掉之前的Hibernate或者MyBatis
+
+
+
+
+{'1':123}
+
+Quartz定时任务的使用
+Quartz:定时任务框架
+主要可以实现定时执行某些事情
+比如：
+每日数据统计
+定时还款提醒
+
+Quartz完善定时任务框架
+主要：
+JDBCJob---数据库
+RAMJob----内存
+
+Quartz:
+建造者模式
+1、Scheduler:调度器
+负责进行作业的调度
+    StdSchedulerFactory.getDefaultScheduler()---支持配置文件加载：文件：classpath:quartz.properties
+    DirectSchedulerFactory.getInstance();---不支持配置文件加载
+2、Trigger  *****
+触发器，设置作业执行的时机
+可以设置作业什么时候开启，间隔时间，运行次数
+
+3、作业Job和JobDetail
+对象交互
+
+CronTrigger触发器
+支持CRON语法
+Cron就是一个时间格式的语法
+格式：秒 分 时 日 月 星期 年
+其中年可以省略
+星期 1-7  1是周日  7周六
+特殊字符：
+,  连接多个不连续的值 3,7  3和7的时候执行
+-  标记起始值  2-4  2开始到4截止
+*  任意值   *   任意
+/  间隔值   0/2  间隔2个单位执行
+?  占位符
+L 表达的是最后，主要用在日期和星期中，用在日期中表达月份的最后一天，可能31号，也可能是30号，还有29、28 前面还可以使用数字：比如 日期上
+0 0 0 4L * ?   每个月的倒数第4天
+0 0 0 0  * 6L  每个月最后一个星期五
+W 表示指定日期最近的工作日 只用在日期中，不可跨月
+ 20W  表示离20号最近的工作日
+ LW   每个月最后一个工作日
+
+C 表示日历，用在日期和星期中
+12C  用在日期中，12号之后的第一天
+2C   用在星期中，星期一后的第一天
+
+# 表示某月第几个星期，主要用字星期中
+0 0 0 0 6 1#2  每年的6月的第二个星期日
+3#4  每月的第四个星期二
+
+
+实现SSS框架定时将MySQL数据进行Redis存储
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
